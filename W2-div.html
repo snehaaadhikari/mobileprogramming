@@ -58,6 +58,31 @@
       <p id="text5">Initial text before calculation.</p>
      <button type="button" onclick="displaySum()">Try it</button>
     </div>
+    
+    
+    <div id="container7" class="box">
+    <p id = "text7"> Subtract </p> 
+    <button class="btn" onclick="display1()"> Subtract </button>       
+    </div>
+     <div id="container8" class="box">
+    <p id = "text8"> Multiple </p> 
+    <button class="btn" onclick="display2()"> Multiple </button>       
+    </div>
+    
+    <div id="container9" class="box">
+    <p id = "text9"> divide </p> 
+    <button class="btn" onclick="display3()"> divide </button>       
+    </div>
+
+    <div id="container10" class="box">
+    <p id = "text10"> Control </p> 
+    <button class="btn" onclick="display4()"> Control </button>       
+    </div>
+    
+
+    
+
+
 
     <script>
       function hideBox(id) {
@@ -73,7 +98,20 @@
         document.getElementById("text4").innerHTML = "Content Updated!";
       }
       function changeText(Id){
-        document.getElementById("text5").innerHTML = "Total Sum"
+        document.getElementById("text5").innerHTML = "Total Sum";
+      }
+   
+      function changeText(Id){
+        document.getElementById("text7").innerHTML = "Subtract";
+      }
+      function changeText(Id){
+        document.getElementById("text8").innerHTML = "Multiply";
+      }
+      function changeText(Id){
+        document.getElementById("text9").innerHTML = "Divisions";
+      }
+      function changeText(Id){
+        document.getElementById("text10").innerHTML = "Control";
       }
     </script>
   </body>
