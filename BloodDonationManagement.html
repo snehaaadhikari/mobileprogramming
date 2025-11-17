@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Blood Donation Mob App</title>
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_90lfz-oXXUwU9ByQKASkGJ0x69TuU1ssMQ&s"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="BDM.css" />
+    <script defer src="hamburger.js"></script>
+  </head>
+  <body>
+    <!--Header-->
+    <header class="main">
+      <div class="mainBD">
+        <h1 class="logo">
+          <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_90lfz-oXXUwU9ByQKASkGJ0x69TuU1ssMQ&s"
+            alt="Logo"
+          />LifePlus
+        </h1>
+
+        <!--navigation-->
+        <nav class="main-nav">
+          <ul>
+            <li><a href="#home" class="active">Home</a></li>
+            <li><a href="#BloodType" class="active">Available Blood Types</a></li>
+            <li><a href="#contact" class="active">Contact</a></li>
+            <li><a href="#donate" class="active">Donate</a></li>
+            <li><a href="#about" class="active">About Us</a></li>
+          </ul>
+        </nav>
+
+        <!-- Hamburger for mobile only -->
+        <div class="ham-menu" id="hamMenu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </header>
+
+    <!-- Off-screen menu for mobile -->
+    <div class="off-screen-menu" id="menu">
+      <ul>
+        <li><a href="#home" class="active">Home</a></li>
+        <li><a href="#BloodType">Available Blood Types</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#donate">Donate</a></li>
+        <li><a href="#about">About Us</a></li>
+      </ul>
+    </div>
+
+    <main>
+      <h1>Welcome Donor!!</h1>
+      <p>Your contribution can save lives. How can you help today?</p>
+      <div class="button-group">
+        <button type="button" class="donate">Donate</button>
+        <button type="button" class="RB">Request Blood</button>
+      </div>
+       <div class="card-container">
+        <h2>Current Blood Stock</h2>
+        <div class="blood-stock">
+            <button type="button" class="blood-btn">A+</button>
+            <button type="button" class="blood-btn">A-</button>
+            <button type="button" class="blood-btn">B+</button>
+            <button type="button" class="blood-btn">B-</button>
+            <button type="button" class="blood-btn">AB+</button>
+            <button type="button" class="blood-btn">AB-</button>
+            <button type="button" class="blood-btn">O+</button>
+            <button type="button" class="blood-btn">O-</button>
+        </div>
+        <h2>Urgent Needs</h2>
+        <div class="urgent-section">
+            <div class="urgent-box">
+                <p><strong>Blood Type:</strong> B-</p>
+                <p><strong>Hospital:</strong> City General Hospital</p>
+                <p><em>Case: Trauma Case</em></p>
+                <button class="urgent-btn">Help Now</button>
+             </div>
+             <div class="urgent-box">
+                <p><strong>Blood Type:</strong> AB-</p>
+                <p><strong>Hospital:</strong> St. Mary's Medical Center</p>
+                <p><em>Case: Surgery</em></p>
+              <button class="urgent-btn">Help Now</button>
+            </div>
+        </div>
+        <h2>Recent Activities</h2>
+        <div class="activities">
+            <div class="abox">
+                <h3><p> 
+                    Donation Fest: <em> Sundhara Park 
+                </em></p></h3>
+                <p>- Blood Donation Program For blood checkup and donation. 
+                    - Save Your and Others Life!!
+                </p>
+            </div>
+            <div class="abox">
+                <h3> <p> A life Saved!!</p></h3>
+                <img src="https://ssbhealthcare.com/wp-content/uploads/2023/06/close-up-patient-with-tubes-her-arm-squeezing-ball-her-hand-while-donating-blood_1200x800-1200x900.jpg">
+                <p> - Your recent <em>Blood Donation </em> helped to save life </p>
+            </div>
+        </div>
+
+
+
+
+      
+    </main>
+  </body>
+</html>

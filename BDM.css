@@ -1,0 +1,260 @@
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-color: whitesmoke;
+}
+.logo {
+  line-height: 1.6;
+  background-color: hsl(0, 25%, 97%);
+  color: hsl(0, 27%, 48%);
+  font-size: xx-large;
+  height: auto;
+  display: flex;
+}
+.logo img {
+  width: 60px;
+  height: auto;
+}
+
+.main {
+  background-color: hsl(0, 25%, 97%);
+  border-bottom: 1.5px solid #9e1919;
+  padding: 1rem 0;
+}
+
+.mainBD {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 1rem;
+}
+
+.main-nav ul {
+  display: flex;
+  list-style: none;
+  gap: 1.5rem;
+}
+
+.main-nav a {
+  text-decoration: none;
+  color: #eef6fe;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.main-nav a:hover,
+.main-nav a.active {
+  color: #5a0d0d;
+}
+
+.ham-menu {
+  height: 40px;
+  width: 40px;
+  margin-left: 1rem;
+  position: relative;
+  cursor: pointer;
+  display: none;
+  z-index: 101;
+  color: #01070d;
+}
+
+.ham-menu span {
+  height: 4px;
+  width: 100%;
+  background-color: #01070d;
+  position: absolute;
+  border-radius: 25px;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: 0.3s ease;
+}
+
+.ham-menu span:nth-child(1) {
+  top: 25%;
+}
+.ham-menu span:nth-child(2) {
+  top: 50%;
+}
+.ham-menu span:nth-child(3) {
+  top: 75%;
+}
+
+.ham-menu.active span:nth-child(1) {
+  top: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+.ham-menu.active span:nth-child(2) {
+  opacity: 0;
+}
+.ham-menu.active span:nth-child(3) {
+  top: 50%;
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.off-screen-menu {
+  background-color: rgb(216, 211, 211);
+  height: 100vh;
+  width: 100%;
+  max-width: 450px;
+  position: fixed;
+  right: -450px;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  z-index: 100;
+}
+.off-screen-menu.active {
+  right: 0;
+}
+.off-screen-menu ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+}
+.off-screen-menu li {
+  margin: 15px 0;}
+.off-screen-menu a {
+  color: #0c0808;
+  text-decoration: none;
+  font-size: 1.2rem;
+  display: block;
+  padding: 10px 20px;
+  transition: 0.3s ease;
+}
+.off-screen-menu a:hover {
+  background-color: rgba(211, 96, 96, 0.78);
+  border-radius: 5px;
+}
+
+.button-group {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin: 1rem;
+}
+
+.button-group button {
+  flex: 1;
+  max-width: 1000px;
+}
+
+.donate {
+  background-color: rgb(159, 34, 34);
+  color: #eef6fe;
+  padding: 15px 32px;
+  text-align: center;
+  font-size: 16px;
+  border: none;
+}
+
+.RB {
+  background-color: #e7e7e7;
+  color: black;
+  padding: 15px 32px;
+  text-align: center;
+  font-size: 16px;
+  border: none;
+}
+.blood-stock {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.blood-btn {
+  background-color: #e7e7e7;
+  border: 2px solid #9e1919;
+  color: #9e1919;
+  padding: 15px 25px;
+  border-radius: 8px;
+  font-size: 1rem;
+  min-width: 100px;
+  text-align: center;
+}
+
+.urgent-section {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.urgent-box {
+  border: 2px solid #9e1919;
+  padding: 1rem;
+  width: 220px;
+  background-color: white;
+  border-radius: 8px;
+  text-align: left;
+}
+
+.urgent-btn {
+  background-color: #9e1919;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  margin-top: 10px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+.activities{
+    display:flex; 
+    gap: 1rem;
+    justify-content: left;
+    padding: 1rem;
+}
+.abox{
+    border:2px solid #9e1919;
+    padding:1rem;
+    width:200px;
+    background-color: white;
+    border-radius:5px;
+}
+.abox img{
+  width: 180px;
+  height: 100px;
+  display:flex;
+}
+
+
+
+
+
+@media (max-width: 768px) {
+  .ham-menu {
+    display: block;
+  }
+
+  .main-nav ul {
+    display: none;
+  }
+
+  .button-group {
+    flex-direction: column;
+    width: 100%;
+    padding: 0 1rem;
+  }
+
+  .button-group button {
+    width: 100%;
+    max-width: none;
+  }
+  
+   .box {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .Hospital-btn {
+    width: 100%;
+    max-width: 300px;
+  }
+
+
+
+}

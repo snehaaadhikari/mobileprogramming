@@ -1,0 +1,104 @@
+/* Reset default browser styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+/* Headings and paragraphs */
+h1,
+h2 {
+  margin: 20px;
+  color: #2c3e50;
+}
+
+p {
+  margin: 10px 20px;
+  line-height: 1.6;
+}
+
+/* Navigation bar */
+ul.nav {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+ul.nav li {
+  float: left;
+}
+
+ul.nav li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+ul.nav li a:hover {
+  background-color: #111;
+}
+
+/* Gallery section */
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 20px;
+}
+
+.gallery figure {
+  margin: 15px;
+  text-align: center;
+}
+
+.gallery img {
+  width: 300px;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.gallery figcaption {
+  margin-top: 8px;
+  font-weight: bold;
+  color: #555;
+}
+
+/* Package links */
+ul.package-links {
+  list-style-type: none;
+  margin: 10px 20px;
+  padding: 0;
+}
+
+ul.package-links li {
+  margin: 5px 0;
+}
+
+ul.package-links li a {
+  color: #2980b9;
+  text-decoration: none;
+}
+
+ul.package-links li a:hover {
+  text-decoration: underline;
+}
+.hamburger {
+  font-size: 28px;
+  border: none;
+  background: none;
+  color: white;
+  padding: 10px 16px;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: inline-block;
+  z-index: 2;
+}
