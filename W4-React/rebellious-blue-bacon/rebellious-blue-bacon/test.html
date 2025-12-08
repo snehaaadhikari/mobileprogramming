@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Survey Form</title>
+  </head>
+
+  <body>
+    <h1 id="title">Survey Form</h1>
+    <p id="description">
+      This is an survey of interest in which career a student should look
+      forward too after graduation in Bsc.Information Technology (IT)
+    </p>
+    <form id="survey-form">
+      <label id="name-label" for="name">Name:</label>
+      <input
+        type="text"
+        id="name"
+        name="user_name"
+        placeholder="Enter your full name"
+        required
+      /><br />
+      <label id="email-label" for="email">Email</label>
+      <input
+        id="email"
+        type="email"
+        placeholder="Enter your email"
+        required
+      /><br />
+      <label id="number-label" for="number">Age</label>
+      <input
+        id="number"
+        placeholder="Enter your age"
+        type="number"
+        min="20"
+        max="100"
+      />
+      <br />
+      <label id="dropdown-label" for="dropdown">Preferred Career Path:</label>
+      <select id="dropdown">
+        <option disabled="" selected="" value="">Select current role</option>
+        <option value="SE">Software Engineer</option>
+        <option value="AE">AI/ML Engineer</option>
+        <option value="CSS">CyberSecurity Specialist</option>
+        <option value="DS">Data Science</option>
+      </select>
+      <br />
+      <p>Why is it your priority?</p>
+
+      <label for="rising-future"
+        ><input
+          type="radio"
+          name="priority-reason"
+          id="rising-future"
+          value="rising-future"
+        />
+        Rising Future</label
+      ><br />
+
+      <label for="genuine-interest"
+        ><input
+          type="radio"
+          name="priority-reason"
+          id="genuine-interest"
+          value="genuine-interest"
+        />
+        Genuine Interest</label
+      ><br />
+
+      <label for="others"
+        ><input
+          type="radio"
+          name="priority-reason"
+          id="others"
+          value="others"
+        />
+        Others</label
+      ><br />
+      <br />
+      <p>
+        Which certifications/skills do you feel are most important for your
+        career that you need to acquire outside your Bsc. IT degree?
+      </p>
+      <br />
+      <input type="checkbox" id="location" name="location" value="location" />
+      <label for="location">AWS/Azure/Google Cloud Certification</label><br />
+      <input type="checkbox" id="price" name="price" value="price" />
+      <label for="price">CompTIA/Cisco Networking Certifications</label>
+      <br />
+      <p>Feedback:</p>
+      <textarea
+        id="comments"
+        name="user_comments"
+        rows="5"
+        cols="50"
+        placeholder="Enter your feedback here..."
+      ></textarea>
+      <br /><br />
+      <button type="submit" id="submit">Submit Survey Now!**</button>
+    </form>
+    <script type="module" src="JSstudio.js"></script>
+  </body>
+</html>

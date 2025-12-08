@@ -1,7 +1,264 @@
-<DOCTYPE HTML>
-    <html>
-    <head>
-        <title> lol </title>
-    </head>    
-    </html>
-</DOCTYPE>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Blood Donation Mob App</title>
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_90lfz-oXXUwU9ByQKASkGJ0x69TuU1ssMQ&s"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="BDM.css" />
+
+    <script defer src="hamburger.js"></script>
+    <script defer src="hello.js"></script>
+
+    <style>
+      /* --- Modal structure styles (from your original code) --- */
+      .modal {
+        display: none; /* Hidden by default - This is key! */
+        position: fixed;
+        z-index: 1000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0, 0, 0, 0.4);
+        padding-top: 60px;
+      }
+
+      /* Modal Content/Box */
+      .modal-content {
+        background-color: #fefefe;
+        margin: 5% auto;
+        padding: 20px;
+        border: 1px solid #888;
+        width: 80%;
+        max-width: 500px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+          0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      }
+      .close {
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+      }
+
+      .close:hover,
+      .close:focus {
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+      }
+
+      /* Form styling */
+      .modal-content label {
+        display: block;
+        margin-top: 10px;
+        font-weight: bold;
+        color: #444;
+      }
+      .modal-content input,
+      .modal-content select {
+        width: 100%;
+        padding: 8px;
+        margin-top: 5px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+      }
+      .modal-content button[type="submit"] {
+        background-color: #a30000;
+        color: white;
+        padding: 10px 15px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        margin-top: 10px;
+      }
+      .modal-content button[type="submit"]:hover {
+        background-color: #7d0000;
+      }
+
+      /* --- Styling for the dynamic list (requestsList) --- */
+      .urgent-section {
+        list-style: none; /* Remove bullet points */
+        padding: 0;
+      }
+      .urgent-box {
+        border: 1px solid #ccc;
+        padding: 15px;
+        margin-bottom: 10px;
+        border-radius: 6px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        background-color: #fff;
+      }
+      .urgent-box.fulfilled {
+        background-color: #e0ffe0; /* Light green for fulfilled */
+        border-left: 5px solid green;
+        opacity: 0.7;
+      }
+      .status-pending {
+        color: orange;
+        font-weight: bold;
+      }
+      .status-fulfilled {
+        color: green;
+        font-weight: bold;
+      }
+      .action-buttons button {
+        margin-right: 5px;
+        padding: 5px 10px;
+        cursor: pointer;
+        background-color: #a30000;
+        color: white;
+        border: none;
+        border-radius: 4px;
+      }
+      .action-buttons button:disabled {
+        background-color: #ccc;
+        cursor: not-allowed;
+      }
+      .action-buttons .delete-btn {
+        background-color: #555;
+      }
+      .no-requests {
+        text-align: center;
+        color: #888;
+        padding: 20px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header class="main">
+      <div class="mainBD">
+        <h1 class="logo">
+          <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_90lfz-oXXUwU9ByQKASkGJ0x69TuU1ssMQ&s"
+            alt="Logo"
+          />LifePlus
+        </h1>
+        <nav class="main-nav">
+          <ul>
+            <li><a href="#home" class="active">Home</a></li>
+            <li>
+              <a href="#BloodType" class="active">Available Blood Types</a>
+            </li>
+            <li><a href="#contact" class="active">Contact</a></li>
+            <li><a href="#donate" class="active">Donate</a></li>
+            <li><a href="#about" class="active">About Us</a></li>
+          </ul>
+        </nav>
+        <div class="ham-menu" id="hamMenu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </header>
+    <div class="off-screen-menu" id="menu">
+      <ul>
+        <li><a href="#home" class="active">Home</a></li>
+        <li><a href="#BloodType">Available Blood Types</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#donate">Donate</a></li>
+        <li><a href="#about">About Us</a></li>
+      </ul>
+    </div>
+
+    <main>
+      <h1>Welcome Donor!!</h1>
+      <p>Your contribution can save lives. How can you help today?</p>
+      <div class="button-group">
+        <button type="button" class="donate">Donate</button>
+        <button type="button" class="RB" id="requestBloodBtn">
+          Request Blood
+        </button>
+      </div>
+
+      <div class="card-container">
+        <h2>Current Blood Stock</h2>
+        <div class="blood-stock">
+          <button type="button" class="blood-btn">A+</button>
+          <button type="button" class="blood-btn">A-</button>
+          <button type="button" class="blood-btn">B+</button>
+          <button type="button" class="blood-btn">B-</button>
+          <button type="button" class="blood-btn">AB+</button>
+          <button type="button" class="blood-btn">AB-</button>
+          <button type="button" class="blood-btn">O+</button>
+          <button type="button" class="blood-btn">O-</button>
+        </div>
+
+        <h2>Active Blood Requests</h2>
+        <ul class="urgent-section" id="requestsList">
+          <li>Loading requests...</li>
+        </ul>
+
+        <h2>Recent Activities</h2>
+        <div class="activities">
+          <div class="abox">
+            <h3>
+              <p>Donation Fest: <em> Sundhara Park </em></p>
+            </h3>
+            <p>
+              - Blood Donation Program For blood checkup and donation. - Save
+              Your and Others Life!!
+            </p>
+          </div>
+          <div class="abox">
+            <h3><p>A life Saved!!</p></h3>
+            <img
+              src="https://ssbhealthcare.com/wp-content/uploads/2023/06/close-up-patient-with-tubes-her-arm-squeezing-ball-her-hand-while-donating-blood_1200x800-1200x900.jpg"
+            />
+            <p>- Your recent <em>Blood Donation </em> helped to save life</p>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <div id="requestBloodModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Request Blood Registration</h2>
+        <form id="bloodRequestForm">
+          <label for="name">Patient Name:</label>
+          <input type="text" id="name" name="name" required />
+
+          <label for="hospital">Hospital Name:</label>
+          <input type="text" id="hospital" name="hospital" required />
+
+          <label for="bloodType">Required Blood Type:</label>
+          <select id="bloodType" name="bloodType" required>
+            <option value="">Select a Blood Type</option>
+            <option value="A+">A+</option>
+            <option value="A-">A-</option>
+            <option value="B+">B+</option>
+            <option value="B-">B-</option>
+            <option value="AB+">AB+</option>
+            <option value="AB-">AB-</option>
+            <option value="O+">O+</option>
+            <option value="O-">O-</option>
+          </select>
+
+          <label for="units">Units Required (Pints):</label>
+          <input type="number" id="units" name="units" min="1" required />
+
+          <label for="reason"
+            >Reason for Request (e.g., Surgery, Trauma):</label
+          >
+          <input type="text" id="reason" name="reason" required />
+
+          <button type="submit">Submit Request</button>
+        </form>
+      </div>
+    </div>
+
+    <script type="module" src="firebase.js"></script>
+  </body>
+</html>
