@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BloodCare – Dashboard</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="morestyle.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="mobile-container dashboard">
+      <header class="dashboard-header">
+        <div class="header-left">
+          <div class="blood-drop-small">
+            <i class="fas fa-tint"></i>
+          </div>
+          <span class="app-name">Blood Bank</span>
+        </div>
+        <button class="notification-btn">
+          <i class="fas fa-bell"></i>
+          <span class="notification-badge">2</span>
+        </button>
+      </header>
+
+      <div class="welcome-section">
+        <h1 id="welcomeText">Welcome, Donor!</h1>
+        <p>Your contribution can save lives. How can you help today?</p>
+      </div>
+
+      <div class="quick-actions">
+        <button id="donateBtn" class="action-btn donate">Donate Blood</button>
+        <button id="requestBtn" class="action-btn request">
+          Request Blood
+        </button>
+      </div>
+
+      <section class="section">
+        <h2 class="section-title">Current Blood Stock</h2>
+        <div class="blood-stock-grid">
+          <div class="blood-card">
+            <div class="stock-bar">
+              <div
+                class="stock-fill"
+                style="height: 80%"
+                data-level="adequate"
+              ></div>
+            </div>
+            <span class="blood-type">A+</span>
+          </div>
+          <div class="blood-card">
+            <div class="stock-bar">
+              <div
+                class="stock-fill"
+                style="height: 30%"
+                data-level="low"
+              ></div>
+            </div>
+            <span class="blood-type">A-</span>
+          </div>
+          <div class="blood-card">
+            <div class="stock-bar">
+              <div
+                class="stock-fill"
+                style="height: 90%"
+                data-level="adequate"
+              ></div>
+            </div>
+            <span class="blood-type">B+</span>
+          </div>
+          <div class="blood-card">
+            <div class="stock-bar">
+              <div
+                class="stock-fill"
+                style="height: 10%"
+                data-level="critical"
+              ></div>
+            </div>
+            <span class="blood-type">B-</span>
+          </div>
+          <div class="blood-card">
+            <div class="stock-bar">
+              <div
+                class="stock-fill"
+                style="height: 60%"
+                data-level="low"
+              ></div>
+            </div>
+            <span class="blood-type">AB+</span>
+          </div>
+          <div class="blood-card">
+            <div class="stock-bar">
+              <div
+                class="stock-fill"
+                style="height: 5%"
+                data-level="critical"
+              ></div>
+            </div>
+            <span class="blood-type">AB-</span>
+          </div>
+          <div class="blood-card">
+            <div class="stock-bar">
+              <div
+                class="stock-fill"
+                style="height: 75%"
+                data-level="adequate"
+              ></div>
+            </div>
+            <span class="blood-type">O+</span>
+          </div>
+          <div class="blood-card">
+            <div class="stock-bar">
+              <div
+                class="stock-fill"
+                style="height: 45%"
+                data-level="low"
+              ></div>
+            </div>
+            <span class="blood-type">O-</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2 class="section-title">Urgent Needs</h2>
+        <div class="urgent-list">
+          <div class="urgent-card">
+            <div class="urgent-left">
+              <div class="blood-badge critical">B-</div>
+              <div class="urgent-info">
+                <h3>City General Hospital</h3>
+                <p>Trauma Case</p>
+              </div>
+            </div>
+            <button class="help-btn">Help Now</button>
+          </div>
+          <div class="urgent-card">
+            <div class="urgent-left">
+              <div class="blood-badge critical">AB-</div>
+              <div class="urgent-info">
+                <h3>St. Mary's Medical Center</h3>
+                <p>Surgery</p>
+              </div>
+            </div>
+            <button class="help-btn">Help Now</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2 class="section-title">Recent Activity</h2>
+        <div class="activity-list">
+          <div class="activity-card">
+            <div class="activity-icon success">
+              <i class="fas fa-check-circle"></i>
+            </div>
+            <p>
+              A life was saved! A recent O+ donation helped a patient in
+              critical condition.
+            </p>
+          </div>
+          <div class="activity-card">
+            <div class="activity-icon heart">
+              <i class="fas fa-heart"></i>
+            </div>
+            <p>Thank you to the anonymous donor who contributed yesterday.</p>
+          </div>
+        </div>
+      </section>
+
+      <div style="height: 80px"></div>
+    </div>
+
+    <nav class="bottom-nav">
+      <a href="dashboard.html" class="nav-item active">
+        <i class="fas fa-home"></i>
+        <span>Home</span>
+      </a>
+      <a href="#" class="nav-item" id="navSearch">
+        <i class="fas fa-search-location"></i>
+        <span>Find a Drive</span>
+      </a>
+      <a href="#" class="nav-item" id="navProfile">
+        <i class="fas fa-user-circle"></i>
+        <span>My Profile</span>
+      </a>
+      <a href="#" class="nav-item" id="navMore">
+        <i class="fas fa-ellipsis-h"></i>
+        <span>More</span>
+      </a>
+    </nav>
+
+    <!-- Donate Modal -->
+    <div id="donateModal" class="modal">
+      <div class="modal-overlay"></div>
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3>Schedule Your Donation</h3>
+          <button class="close-modal">&times;</button>
+        </div>
+        <div class="modal-body">
+          <p>
+            Please confirm your details and choose a date for your next
+            donation.
+          </p>
+          <form id="donateForm">
+            <div class="input-group">
+              <label>Full Name</label>
+              <input type="text" id="donateName" readonly />
+            </div>
+            <div class="input-group">
+              <label>Email Address</label>
+              <input type="email" id="donateEmail" readonly />
+            </div>
+            <div class="input-group">
+              <label>Preferred Center</label>
+              <select id="donateCenter" required>
+                <option value="">Select Center</option>
+                <option>City General Hospital</option>
+                <option>St. Mary's Medical Center</option>
+                <option>Downtown Blood Bank</option>
+              </select>
+            </div>
+            <div class="input-group">
+              <label>Preferred Date</label>
+              <input type="date" id="donateDate" required />
+            </div>
+            <div class="input-group">
+              <label>Preferred Time</label>
+              <input type="time" id="donateTime" required />
+            </div>
+            <button type="submit" class="btn-primary">
+              Confirm Appointment
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Request Modal -->
+    <div id="requestModal" class="modal">
+      <div class="modal-overlay"></div>
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3>Post a Blood Request</h3>
+          <button class="close-modal">&times;</button>
+        </div>
+        <div class="modal-body">
+          <p>Your request will be posted to the Urgent Needs list.</p>
+          <form id="requestForm">
+            <div class="input-group">
+              <label>Hospital/Center Name</label>
+              <input
+                type="text"
+                id="requestHospital"
+                placeholder="Enter hospital name"
+                required
+              />
+            </div>
+            <div class="input-group">
+              <label>Required Blood Group</label>
+              <select id="requestBloodGroup" required>
+                <option value="">Select Blood Group</option>
+                <option>A+</option>
+                <option>A-</option>
+                <option>B+</option>
+                <option>B-</option>
+                <option>AB+</option>
+                <option>AB-</option>
+                <option>O+</option>
+                <option>O-</option>
+              </select>
+            </div>
+            <div class="input-group">
+              <label>Reason</label>
+              <input
+                type="text"
+                id="requestReason"
+                placeholder="e.g., Emergency Surgery"
+                required
+              />
+            </div>
+            <div class="input-group">
+              <label>Contact Phone</label>
+              <input
+                type="tel"
+                id="requestContact"
+                placeholder="Contact number"
+                required
+              />
+            </div>
+            <button type="submit" class="btn-primary">Submit Request</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- More Modal -->
+    <div id="moreModal" class="modal">
+      <div class="modal-overlay"></div>
+      <div class="modal-content modal-menu">
+        <div class="modal-header">
+          <h3>More Options</h3>
+          <button class="close-modal">&times;</button>
+        </div>
+        <div class="modal-body">
+          <div class="menu-list">
+            <button class="menu-item" id="editProfileBtn">
+              <i class="fas fa-user-edit"></i>
+              <span>Edit Profile</span>
+              <i class="fas fa-chevron-right"></i>
+            </button>
+            <button class="menu-item" id="donationHistoryBtn">
+              <i class="fas fa-history"></i>
+              <span>Donation History</span>
+              <i class="fas fa-chevron-right"></i>
+            </button>
+            <button class="menu-item" id="settingsBtn">
+              <i class="fas fa-cog"></i>
+              <span>Settings</span>
+              <i class="fas fa-chevron-right"></i>
+            </button>
+            <button class="menu-item" id="aboutBtn">
+              <i class="fas fa-info-circle"></i>
+              <span>About</span>
+              <i class="fas fa-chevron-right"></i>
+            </button>
+            <button class="menu-item danger" id="logoutBtn">
+              <i class="fas fa-sign-out-alt"></i>
+              <span>Logout</span>
+              <i class="fas fa-chevron-right"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Logout Confirmation Modal -->
+    <div id="logoutModal" class="modal">
+      <div class="modal-overlay"></div>
+      <div class="modal-content small-modal">
+        <div class="modal-body">
+          <h3>Confirm Logout</h3>
+          <p>Are you sure you want to logout?</p>
+          <div class="modal-actions">
+            <button class="btn-secondary close-modal">Cancel</button>
+            <button id="confirmLogoutBtn" class="btn-danger">Logout</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="toast" class="toast hidden">
+      <i class="fas fa-check-circle"></i>
+      <span id="toastMessage"></span>
+    </div>
+
+    <div id="loadingOverlay" class="loading-overlay hidden">
+      <div class="spinner"></div>
+    </div>
+
+    <script type="module" src="app.js"></script>
+  </body>
+</html>
